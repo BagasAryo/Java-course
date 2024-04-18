@@ -1,16 +1,53 @@
 package belajaran.keyword;
 
 class Player{
-    String name; // default
+    String name; // default, dia akan bisa dibaca dan ditulis dari luar class
+    public int exp; // public, dia akan bisa dibaca dan ditulis dari luar class
+    private int health; // private, hanya akan bisa dibaca dan ditulis di dalam class saja
 
-    Player(String name){
+    Player(String name, int exp, int health){
         this.name = name;
+        this.exp = exp;
+        this.health = health;
+    }
+
+    // default access modifier
+    void display(){
+        System.out.println("Name \t: " + this.name);
+        System.out.println("Exp \t: " + this.exp);
+        System.out.println("Health \t: " + this.health);
+    }
+
+    public void setName(String newName){
+        this.name = newName;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Player player1 = new Player("putriirans");
-        System.out.println(player1.name); // 
+        Player player1 = new Player("putriirans",0, 100);
+        
+        // default
+        System.out.println(player1.name); // membaca data
+        player1.name = "sabila"; // menulis data
+        System.out.println(player1.name); // membaca data
+
+        //public
+        System.out.println(player1.name); // membaca data
+        player1.exp = 1; // menulis data
+        System.out.println(player1.exp); // membaca data
+
+        //private (tidak bisa diakses karena private)
+        // System.out.println(player1.name); // membaca data
+        // player1.health = 90; // menulis data
+        // System.out.println(player1.health); // membaca data
+
+        // methods
+
+        // default
+        player1.display();
+
+        //public 
+        player1.setName("bagas");
     }
 }
