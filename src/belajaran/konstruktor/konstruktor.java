@@ -1,5 +1,4 @@
 package belajaran.konstruktor;
-
 class Mahasiswa{
     String nama;
     String NIM;
