@@ -13,6 +13,7 @@ class Player{
 
     // default access modifier
     void display(){
+        plusExp(); // setiap panggil display, exp nya nambah; contoh private methods
         System.out.println("Name \t: " + this.name);
         System.out.println("Exp \t: " + this.exp);
         System.out.println("Health \t: " + this.health);
@@ -20,6 +21,10 @@ class Player{
 
     public void setName(String newName){
         this.name = newName;
+    }
+
+    private void plusExp(){
+        this.exp += 100;
     }
 }
 
@@ -49,5 +54,9 @@ public class Main {
 
         //public 
         player1.setName("bagas");
+        player1.display();
+
+        //private
+        // player1.plusExp(); tidak bisa di akses dalam luar class
     }
 }
