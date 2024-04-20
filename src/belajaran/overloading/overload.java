@@ -18,5 +18,9 @@ public class overload {
         System.out.println(a);
         double b = math.tambah(20, 5);
         System.out.println(b);
+
+        math.mul(5, 10);
+        math.mul();
+
     }
 }
