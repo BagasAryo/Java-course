@@ -8,7 +8,7 @@ public class Hero implements IAttack{
         this.name = name;
         this.health = health;
     }
-
+    // memaksa class ini untuk mengimplementasikan method attack
     public void attack(Hero enemy){
         System.out.println(this.name + " attacks " + enemy.name);
     }
