@@ -6,10 +6,19 @@ interface InterfaceLampu {
 
     public abstract void hidupkan();
     public abstract void matikan();
+    public abstract void inputLampu(String stateLampu);
 }
 
 public class Lampu implements InterfaceLampu{
     int statusLampu;
+
+    public void inputLampu(String stateLampu){
+        if (stateLampu == "hidup") {
+            this.statusLampu = 0;
+        } else if (stateLampu == "mati") {
+            this.statusLampu = 1;
+        }
+    }
 
     public void hidupkan(){
         if(this.statusLampu == KeadaanMati){
